@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 The SlimRoms Project
+ * Copyright (C) 2015 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
- 
+
 #define BTM_DEF_LOCAL_NAME   "Moto X Style"
 #define BTA_DISABLE_DELAY 1000 /* in milliseconds */
 #define BLUETOOTH_QCOM_SW TRUE
