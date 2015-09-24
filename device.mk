@@ -126,7 +126,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/moto/clark/configs/audio/mixer_paths.xml:system/etc/mixer_paths.xml
 
-PRODUCT_PACKAGES += atmel.fw.apq8084
+# NFC access control + feature files + configuration
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
@@ -205,7 +208,6 @@ PRODUCT_PACKAGES += \
     libqomx_core \
     libmmcamera_interface \
     libmmjpeg_interface \
-    camera.clark \
     mm-jpeg-interface-test \
     mm-qcamera-app
 
