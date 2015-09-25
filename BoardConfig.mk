@@ -51,21 +51,9 @@ include device/qcom/sepolicy/sepolicy.mk
 
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
-# Shader cache config options
-# Maximum size of the  GLES Shaders that can be cached for reuse.
-# Increase the size if shaders of size greater than 12KB are used.
-MAX_EGL_CACHE_KEY_SIZE := 12*1024
-
-# Maximum GLES shader cache size for each app to store the compiled shader
-# binaries. Decrease the size if RAM or Flash Storage size is a limitation
-# of the device.
-MAX_EGL_CACHE_SIZE := 2048*1024
-
 BOARD_EGL_CFG := device/moto/clark/egl.cfg
 
 BOARD_USES_ALSA_AUDIO := true
-
-BOARD_USES_QCOM_HARDWARE := true
 
 # Wifi related defines
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
@@ -86,19 +74,36 @@ BOARD_HAS_QCA_BT_ROME := true
 QCOM_BT_USE_BTNV := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/moto/clark/bluetooth
 
-TARGET_NO_RADIOIMAGE := true
-TARGET_BOARD_PLATFORM := msm8992
-TARGET_BOOTLOADER_BOARD_NAME := clark
-TARGET_NO_RPC := true
+#GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 
+# Crypto
+TARGET_HW_DISK_ENCRYPTION := true
+
+# FM
+TARGET_QCOM_NO_FM_FIRMWARE := true
+AUDIO_FEATURE_ENABLED_FM := true
+
+# Fonts
+EXTENDED_FONT_FOOTPRINT := true
+
+# Graphics
+MAX_EGL_CACHE_KEY_SIZE := 12*1024
+MAX_EGL_CACHE_SIZE := 2048*1024
 USE_OPENGL_RENDERER := true
 TARGET_USES_C2D_COMPOSITION := true
 VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 5000000
 TARGET_USES_ION := true
 
-TARGET_USERIMAGES_USE_EXT4 := true
+# Malloc
+MALLOC_IMPL := dlmalloc
+
+TARGET_NO_RADIOIMAGE := true
+TARGET_BOARD_PLATFORM := msm8992
+TARGET_BOOTLOADER_BOARD_NAME := clark
+TARGET_NO_RPC := true
+
 BOARD_BOOTIMAGE_PARTITION_SIZE := 41943040
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 42024960
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1073741824
@@ -107,9 +112,19 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 734003200
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 131072
 
+# Power
+TARGET_POWERHAL_VARIANT := qcom
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
+# Qualcomm support
+BOARD_USES_QCOM_HARDWARE := true
+TARGET_USES_QCOM_BSP := true
+
+# Recovery
+BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_FSTAB = device/moto/clark/fstab.qcom
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
 
 HAVE_ADRENO_SOURCE:= false
 
