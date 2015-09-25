@@ -116,6 +116,9 @@ TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 
 BOARD_SUPPRESS_SECURE_ERASE := true
 
+# CMHW
+BOARD_HARDWARE_CLASS := device/moto/clark/cmhw/
+
 # TWRP definitions
 DEVICE_RESOLUTION := 1440x2560
 TW_BOARD_CUSTOM_GRAPHICS := ../../../device/moto/clark/recovery/graphics.c
