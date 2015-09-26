@@ -96,6 +96,10 @@ PRODUCT_COPY_FILES += \
     device/moto/clark/configs/thermal/thermal-engine-clark.conf:system/etc/thermal-engine-clark.conf
 
 PRODUCT_COPY_FILES += \
+    device/moto/clark/configs/gps/gps.conf:system/etc/gps.conf \
+    device/moto/clark/configs/gps/izat.conf:system/etc/izat.conf
+
+PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
@@ -197,6 +201,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
     device/moto/clark/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     device/moto/clark/nfc/libnfc-brcm-20795a20.conf:system/etc/libnfc-brcm-20795a20.conf
+
+PRODUCT_PACKAGES += \
+    gps.msm8992
 
 # Audio effects
 PRODUCT_PACKAGES += \
