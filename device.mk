@@ -254,7 +254,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicecomm=true \
     persist.audio.fluence.voicecall=true \
     persist.audio.fluence.speaker=true \
-    audio.offload.gapless.enabled=true
+    audio.offload.gapless.enabled=true \
+    audio.offload.buffer.size.kb=32 \
+    av.offload.enable=true \
+    audio.offload.pcm.16bit.enable=true \
+    audio.offload.multiple.enable=true \
+    audio.offload.pcm.24bit.enable=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
