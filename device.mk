@@ -175,7 +175,11 @@ PRODUCT_PACKAGES += \
     libmm-omxcore \
     libOmxVdec \
     libOmxVdecHevc \
-    libOmxVenc
+    libOmxVenc \
+    qcmediaplayer
+
+PRODUCT_BOOT_JARS += \
+    qcmediaplayer
 
 # NFC packages
 PRODUCT_PACKAGES += \
