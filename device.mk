@@ -177,13 +177,6 @@ PRODUCT_PACKAGES += \
     libOmxVdecHevc \
     libOmxVenc
 
-PRODUCT_PACKAGES += \
-    audio.primary.msm8992 \
-    audio.a2dp.default \
-    audio.usb.default \
-    audio.r_submix.default \
-    libaudio-resampler
-
 # NFC packages
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
@@ -200,11 +193,18 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     gps.msm8992
 
-# Audio effects
+# Audio
 PRODUCT_PACKAGES += \
+    audiod \
+    audio.a2dp.default \
+    audio.primary.msm8992 \
+    audio.r_submix.default \
+    audio.usb.default \
+    audio_policy.msm8992 \
+    libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    libqcomvoiceprocessingdescriptors
+    tinymix
 
 PRODUCT_PACKAGES += \
     libqomx_core \
