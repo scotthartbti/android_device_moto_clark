@@ -256,8 +256,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicecall=true \
     persist.audio.fluence.voicecomm=true \
     persist.audio.fluence.voicecall=true \
-    persist.audio.fluence.speaker=true \
-    audio.offload.gapless.enabled=true
+    persist.audio.fluence.speaker=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
