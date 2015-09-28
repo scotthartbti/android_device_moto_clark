@@ -145,11 +145,17 @@ PRODUCT_CHARACTERISTICS := default
 DEVICE_PACKAGE_OVERLAYS := \
     device/moto/clark/overlay
 
-PRODUCT_PACKAGES := \
-    wifi_symlinks \
+PRODUCT_PACKAGES += \
+    dhcpcd.conf \
     libwpa_client \
     hostapd \
-    wpa_supplicant
+    wpa_supplicant \
+    wpa_supplicant.conf \
+    wpa_supplicant_overlay.conf \
+    p2p_supplicant_overlay.conf \
+    hostapd_default.conf \
+    hostapd.accept \
+    hostapd.deny
 
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
