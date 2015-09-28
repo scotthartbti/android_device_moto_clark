@@ -83,10 +83,11 @@ PRODUCT_COPY_FILES += \
     device/moto/clark/configs/media/media_profiles.xml:system/etc/media_profiles.xml \
     device/moto/clark/configs/media/media_codecs.xml:system/etc/media_codecs.xml
 
+# Wifi Firmware
 PRODUCT_COPY_FILES += \
-    device/moto/clark/configs/wifi/p2p_supplicant.conf:system/etc/wifi/p2p_supplicant.conf \
-    device/moto/clark/configs/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    device/moto/clark/configs/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini
+    kernel/moto/clark/drivers/staging/qcacld-2.0/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/qca_cld/WCNSS_cfg.dat \
+    kernel/moto/clark/drivers/staging/qcacld-2.0/firmware_bin/WCNSS_qcom_cfg.usb.ini:system/etc/firmware/wlan/qca_cld/WCNSS_qcom_cfg.usb.ini \
+    kernel/moto/clark/drivers/staging/qcacld-2.0/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
 
 PRODUCT_COPY_FILES += \
     device/moto/clark/configs/sensors/sensorhub-blacklist.txt:system/etc/firmware/sensorhub-blacklist.txt
