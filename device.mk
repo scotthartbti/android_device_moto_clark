@@ -126,14 +126,16 @@ PRODUCT_CHARACTERISTICS := default
 DEVICE_PACKAGE_OVERLAYS := \
     device/moto/clark/overlay
 
+# Wifi Firmware
+PRODUCT_COPY_FILES += \
+    device/moto/clark/wifi/p2p_supplicant.conf:system/etc/wifi/p2p_supplicant.conf \
+    device/moto/clark/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+
 PRODUCT_PACKAGES += \
     dhcpcd.conf \
     libwpa_client \
     hostapd \
     wpa_supplicant \
-    wpa_supplicant.conf \
-    wpa_supplicant_overlay.conf \
-    p2p_supplicant_overlay.conf \
     hostapd_default.conf \
     hostapd.accept \
     hostapd.deny
