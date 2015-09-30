@@ -18,6 +18,27 @@ qcom.bt.le_dev_pwr_class=1
 ro.bluetooth.hfp.ver=1.6
 qcom.bluetooth.soc=rome
 
-# GPS
-persist.gps.qc_nlp_in_use=0
-ro.gps.agps_provider=1
+# USB
+ro.usb.mtp=0x2e82
+ro.usb.mtp_adb=0x2e76
+ro.usb.ptp=0x2e83
+ro.usb.ptp_adb=0x2e84
+ro.usb.bpt=0x2ee5
+ro.usb.bpt_adb=0x2ee6
+ro.usb.bpteth=0x2ee7
+ro.usb.bpteth_adb=0x2ee8
+persist.sys.isUsbOtgEnabled=true
+
+# QCOM
+ro.vendor.extension_library=libqti-perfd-client.so
+
+# Audio
+ro.qc.sdk.audio.ssr=false
+ro.qc.sdk.audio.fluencetype=none
+use.voice.path.for.pcm.voip=true
+audio.offload.disable=0
+audio.offload.pcm.16bit.enable=false
+audio.offload.pcm.24bit.enable=false
+audio.offload.gapless.enabled=false
+av.offload.enable=false
+audio.offload.buffer.size.kb=32

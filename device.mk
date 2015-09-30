@@ -222,6 +222,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     CMActions
 
+# Power
+PRODUCT_PACKAGES += \
+    power.msm8992
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     e2fsck \
