@@ -162,6 +162,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     libqsap_sdk \
+    ebtables \
+    ethertypes \
+    curl \
+    libnl_2 \
+    libbson \
+    libtinyxml \
     libxml2
 
 # Live Wallpapers
@@ -169,26 +175,41 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     librs_jni
 
+# Display
 PRODUCT_PACKAGES += \
     gralloc.msm8992 \
     hwcomposer.msm8992 \
     copybit.msm8992 \
     memtrack.msm8992 \
+    liboverlay \
     libqdutils \
     libqdMetaData
 
+# Media
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
-    libstagefrighthw \
+    libdivxdrmdecrypt \
+    libdashplayer \
+    libOmxAacEnc \
+    libOmxAmrEnc \
     libOmxCore \
-    libmm-omxcore \
+    libOmxEvrcEnc \
+    libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVdecHevc \
     libOmxVenc \
+    libstagefrighthw \
     qcmediaplayer
 
-PRODUCT_BOOT_JARS += \
-    qcmediaplayer
+PRODUCT_BOOT_JARS += qcmediaplayer
+
+# Audio
+PRODUCT_PACKAGES += \
+    audio.primary.msm8992 \
+    audio_policy.msm8992 \
+    audio.a2dp.default \
+    audio.usb.default \
+    audio.r_submix.default
 
 # NFC packages
 PRODUCT_PACKAGES += \
@@ -206,19 +227,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     gps.msm8992
 
-# Audio
-PRODUCT_PACKAGES += \
-    audiod \
-    audio.a2dp.default \
-    audio.primary.msm8992 \
-    audio.r_submix.default \
-    audio.usb.default \
-    audio_policy.msm8992 \
-    libqcompostprocbundle \
-    libqcomvisualizer \
-    libqcomvoiceprocessing \
-    tinymix
-
 PRODUCT_PACKAGES += \
     libqomx_core \
     libmmcamera_interface \
@@ -235,7 +243,16 @@ PRODUCT_PACKAGES += \
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
-    e2fsck
+    e2fsck \
+    make_ext4fs \
+    setup_fs
+
+PRODUCT_PACKAGES += \
+    libaudio-resampler \
+    libqcompostprocbundle \
+    libqcomvisualizer \
+    libqcomvoiceprocessingdescriptors \
+    libqcomvoiceprocessing
 
 # for off charging mode
 PRODUCT_PACKAGES += \

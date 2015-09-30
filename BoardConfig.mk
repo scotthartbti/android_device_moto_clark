@@ -51,18 +51,6 @@ include device/qcom/sepolicy/sepolicy.mk
 
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
-# Shader cache config options
-# Maximum size of the  GLES Shaders that can be cached for reuse.
-# Increase the size if shaders of size greater than 12KB are used.
-MAX_EGL_CACHE_KEY_SIZE := 12*1024
-
-# Maximum GLES shader cache size for each app to store the compiled shader
-# binaries. Decrease the size if RAM or Flash Storage size is a limitation
-# of the device.
-MAX_EGL_CACHE_SIZE := 2048*1024
-
-BOARD_EGL_CFG := device/moto/clark/egl.cfg
-
 BOARD_USES_QCOM_HARDWARE := true
 
 # Audio
@@ -75,6 +63,7 @@ AUDIO_FEATURE_ENABLED_INCALL_MUSIC := true
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 AUDIO_FEATURE_ENABLED_SPKR_PROTECTION := true
 AUDIO_FEATURE_LOW_LATENCY_PRIMARY := true
+AUDIO_FEATURE_ENABLED_LOW_LATENCY_CAPTURE := true
 
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
@@ -107,12 +96,22 @@ TARGET_BOOTLOADER_BOARD_NAME := clark
 TARGET_NO_RPC := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 
+# Graphics
 USE_OPENGL_RENDERER := true
 TARGET_USES_C2D_COMPOSITION := true
 VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 5000000
 TARGET_USES_ION := true
+TARGET_USES_NEW_ION_API :=true
+HAVE_ADRENO_SOURCE:= false
+OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
+TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
+MAX_EGL_CACHE_KEY_SIZE := 12*1024
+MAX_EGL_CACHE_SIZE := 2048*1024
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+BOARD_EGL_CFG := device/moto/clark/egl.cfg
 
+# Filesystems
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 41943040
@@ -123,14 +122,21 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 805306368
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 131072
 
+# Added to indicate that protobuf-c is supported in this build
+PROTOBUF_SUPPORTED := true
+
+#Enable peripheral manager
+TARGET_PER_MGR_ENABLED := true
+
+# Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
-TARGET_RECOVERY_FSTAB = device/moto/clark/fstab.qcom
+# Crypto
+TARGET_HW_DISK_ENCRYPTION := true
 
-HAVE_ADRENO_SOURCE:= false
+# Power
+TARGET_POWERHAL_VARIANT := qcom
 
-OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
-TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 
 BOARD_SUPPRESS_SECURE_ERASE := true
 
@@ -146,4 +152,5 @@ TW_NEW_ION_HEAP := true
 TW_INCLUDE_CRYPTO := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
+TARGET_RECOVERY_FSTAB = device/moto/clark/fstab.qcom
 
