@@ -18,6 +18,10 @@ qcom.bt.le_dev_pwr_class=1
 ro.bluetooth.hfp.ver=1.6
 qcom.bluetooth.soc=rome
 
+# GPS
+persist.gps.qc_nlp_in_use=0
+ro.gps.agps_provider=1
+
 # USB
 ro.usb.mtp=0x2e82
 ro.usb.mtp_adb=0x2e76
