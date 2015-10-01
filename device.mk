@@ -20,97 +20,20 @@
 # Everything in this directory will become public
 
 PRODUCT_COPY_FILES += \
-    device/moto/clark/fstab.qcom:root/fstab.qcom \
-    device/moto/clark/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
-
-PRODUCT_PACKAGES += \
-    init.class_main.sh \
-    init.mmi.boot.sh \
-    init.mmi.dtv.sh \
-    init.mmi.early_boot.sh \
-    init.mmi.touch.sh \
-    init.mmi.usb.rc \
-    init.mmi.usb.sh \
-    init.qcom.rc \
-    init.mmi.block_perm.sh \
-    init.mmi.diag_mdlog.rc \
-    init.qcom.class_core.sh \
-    init.qcom.sh \
-    ueventd.qcom.rc
-
-PRODUCT_COPY_FILES += \
-    device/moto/clark/sec_config:system/etc/sec_config
+    $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
 
 # Input device files for clark
 PRODUCT_COPY_FILES += \
-    device/moto/clark/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl
+    $(LOCAL_PATH)/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl
 
 PRODUCT_COPY_FILES += \
-    device/moto/clark/configs/audio/audio_policy.conf:system/etc/audio_policy.conf \
-    device/moto/clark/configs/audio/audio_effects.conf:system/etc/audio_effects.conf \
-    device/moto/clark/configs/audio/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt \
-    device/moto/clark/configs/audio/audio_ext_spkr.conf:system/etc/audio_ext_spkr.conf \
-    device/moto/clark/configs/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
-    device/moto/clark/configs/audio/audio_platform_info_i2s.xml:system/etc/audio_platform_info_i2s.xml \
-    device/moto/clark/configs/audio/listen_platform_info.xml:system/etc/listen_platform_info.xml \
-    device/moto/clark/configs/audio/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
-    device/moto/clark/configs/audio/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
-    device/moto/clark/configs/audio/audio_effects.conf:system/etc/audio_effects.conf \
-    device/moto/clark/configs/audio/audio_output_policy.conf:system/etc/audio_output_policy.conf \
-    device/moto/clark/configs/audio/audio_output_policy.conf:system/vendor/etc/audio_output_policy.conf \
-    device/moto/clark/configs/audio/vendor_audio_effects.conf:system/vendor/etc/audio_effects.conf
+    $(LOCAL_PATH)/configs/thermal/perf-profile0.conf:system/vendor/etc/perf-profile0.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal-engine-clark.conf:system/etc/thermal-engine-clark.conf
 
 PRODUCT_COPY_FILES += \
-    device/moto/clark/configs/media/media_profiles.xml:system/etc/media_profiles.xml \
-    device/moto/clark/configs/media/media_codecs.xml:system/etc/media_codecs.xml
+    $(LOCAL_PATH)/configs/sensors/sensorhub-blacklist.txt:system/etc/firmware/sensorhub-blacklist.txt
 
-# Wifi Firmware
-PRODUCT_COPY_FILES += \
-    kernel/moto/clark/drivers/staging/qcacld-2.0/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/qca_cld/WCNSS_cfg.dat \
-    kernel/moto/clark/drivers/staging/qcacld-2.0/firmware_bin/WCNSS_qcom_cfg.usb.ini:system/etc/firmware/wlan/qca_cld/WCNSS_qcom_cfg.usb.ini \
-    kernel/moto/clark/drivers/staging/qcacld-2.0/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
-
-PRODUCT_COPY_FILES += \
-    device/moto/clark/configs/sensors/sensorhub-blacklist.txt:system/etc/firmware/sensorhub-blacklist.txt
-
-PRODUCT_COPY_FILES += \
-    device/moto/clark/configs/thermal/perf-profile0.conf:system/vendor/etc/perf-profile0.conf \
-    device/moto/clark/configs/thermal/thermal-engine-clark.conf:system/etc/thermal-engine-clark.conf
-
-PRODUCT_COPY_FILES += \
-    device/moto/clark/configs/gps/gps.conf:system/etc/gps.conf \
-    device/moto/clark/configs/gps/izat.conf:system/etc/izat.conf
-
-PRODUCT_COPY_FILES += \
-    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
-
-# These are the hardware-specific features
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-    frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
-    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
-    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
-    frameworks/native/data/etc/android.hardware.sensor.barometer.xml:system/etc/permissions/android.hardware.sensor.barometer.xml \
-    frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:system/etc/permissions/android.hardware.sensor.stepcounter.xml \
-    frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:system/etc/permissions/android.hardware.sensor.stepdetector.xml \
-    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
-    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-    frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
-    frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
-    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
-    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml
-
-PRODUCT_COPY_FILES += \
-    device/moto/clark/configs/audio/mixer_paths.xml:system/etc/mixer_paths.xml
+PRODUCT_PACKAGES += atmel.fw.apq8084
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
@@ -124,21 +47,7 @@ PRODUCT_AAPT_PREF_CONFIG := 560dpi
 PRODUCT_CHARACTERISTICS := default
 
 DEVICE_PACKAGE_OVERLAYS := \
-    device/moto/clark/overlay
-
-# Wifi Firmware
-PRODUCT_COPY_FILES += \
-    device/moto/clark/wifi/p2p_supplicant.conf:system/etc/wifi/p2p_supplicant.conf \
-    device/moto/clark/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
-
-PRODUCT_PACKAGES += \
-    dhcpcd.conf \
-    libwpa_client \
-    hostapd \
-    wpa_supplicant \
-    hostapd_default.conf \
-    hostapd.accept \
-    hostapd.deny
+    $(LOCAL_PATH)/overlay
 
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
@@ -156,41 +65,22 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     librs_jni
 
-# Display
+# Filesystem management tools
 PRODUCT_PACKAGES += \
-    gralloc.msm8992 \
-    hwcomposer.msm8992 \
-    copybit.msm8992 \
-    memtrack.msm8992 \
-    liboverlay \
-    libqdutils \
-    libqdMetaData
+    e2fsck \
+    make_ext4fs \
+    setup_fs
 
-# Media
+# Power
 PRODUCT_PACKAGES += \
-    libc2dcolorconvert \
-    libdivxdrmdecrypt \
-    libdashplayer \
-    libOmxAacEnc \
-    libOmxAmrEnc \
-    libOmxCore \
-    libOmxEvrcEnc \
-    libOmxQcelp13Enc \
-    libOmxVdec \
-    libOmxVdecHevc \
-    libOmxVenc \
-    libstagefrighthw \
-    qcmediaplayer
+    power.msm8992
 
-PRODUCT_BOOT_JARS += qcmediaplayer
-
-# Audio
 PRODUCT_PACKAGES += \
-    audio.primary.msm8992 \
-    audio_policy.msm8992 \
-    audio.a2dp.default \
-    audio.usb.default \
-    audio.r_submix.default
+    libaudio-resampler \
+    libqcompostprocbundle \
+    libqcomvisualizer \
+    libqcomvoiceprocessingdescriptors \
+    libqcomvoiceprocessing
 
 # NFC packages
 PRODUCT_PACKAGES += \
@@ -199,45 +89,14 @@ PRODUCT_PACKAGES += \
     NfcNci \
     Tag
 
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
-    device/moto/clark/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
-    device/moto/clark/nfc/libnfc-brcm-20795a20.conf:system/etc/libnfc-brcm-20795a20.conf
-
+# Camera
 PRODUCT_PACKAGES += \
-    gps.msm8992
-
-PRODUCT_PACKAGES += \
+    camera.clark \
     libqomx_core \
     libmmcamera_interface \
     libmmjpeg_interface \
     mm-jpeg-interface-test \
     mm-qcamera-app
-
- PRODUCT_PACKAGES += \
-    lights.msm8992
-
-# CMActions
-PRODUCT_PACKAGES += \
-    CMActions
-
-# Power
-PRODUCT_PACKAGES += \
-    power.msm8992
-
-# Filesystem management tools
-PRODUCT_PACKAGES += \
-    e2fsck \
-    make_ext4fs \
-    setup_fs
-
-PRODUCT_PACKAGES += \
-    libaudio-resampler \
-    libqcompostprocbundle \
-    libqcomvisualizer \
-    libqcomvoiceprocessingdescriptors \
-    libqcomvoiceprocessing
 
 # for off charging mode
 PRODUCT_PACKAGES += \
@@ -270,11 +129,150 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.crypto.fuse_sdcard=true \
     persist.fuse_sdcard=true
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.extension_library=libqti-perfd-client.so
+## Below here are confirmed important things 
+## Do not edit
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fstab.qcom:root/fstab.qcom \
+    $(LOCAL_PATH)/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
+
+PRODUCT_PACKAGES += \
+    init.class_main.sh \
+    init.mmi.boot.sh \
+    init.mmi.dtv.sh \
+    init.mmi.early_boot.sh \
+    init.mmi.touch.sh \
+    init.mmi.usb.rc \
+    init.mmi.usb.sh \
+    init.qcom.rc \
+    init.mmi.block_perm.sh \
+    init.mmi.diag_mdlog.rc \
+    init.qcom.class_core.sh \
+    init.qcom.sh \
+    ueventd.qcom.rc
+
+# Display
+PRODUCT_PACKAGES += \
+    gralloc.msm8992 \
+    hwcomposer.msm8992 \
+    copybit.msm8992 \
+    memtrack.msm8992 \
+    liboverlay \
+    libqdutils \
+    libqdMetaData
+
+# Media
+PRODUCT_PACKAGES += \
+    libc2dcolorconvert \
+    libdivxdrmdecrypt \
+    libdashplayer \
+    libOmxAacEnc \
+    libOmxAmrEnc \
+    libOmxCore \
+    libOmxEvrcEnc \
+    libOmxQcelp13Enc \
+    libOmxVdec \
+    libOmxVdecHevc \
+    libOmxVenc \
+    libstagefrighthw \
+    qcmediaplayer
+
+PRODUCT_BOOT_JARS += qcmediaplayer
+
+# Lights
+PRODUCT_PACKAGES += \
+    lights.msm8992
+
+# Audio
+PRODUCT_PACKAGES += \
+    audio.primary.msm8992 \
+    audio_policy.msm8992 \
+    audio.a2dp.default \
+    audio.usb.default \
+    audio.r_submix.default
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/acdbdata/Bluetooth_cal.acdb:system/etc/acdbdata/Bluetooth_cal.acdb \
+    $(LOCAL_PATH)/audio/acdbdata/General_cal.acdb:system/etc/acdbdata/General_cal.acdb \
+    $(LOCAL_PATH)/audio/acdbdata/Global_cal.acdb:system/etc/acdbdata/Global_cal.acdb \
+    $(LOCAL_PATH)/audio/acdbdata/Handset_cal.acdb:system/etc/acdbdata/Handset_cal.acdb \
+    $(LOCAL_PATH)/audio/acdbdata/Hdmi_cal.acdb:system/etc/acdbdata/Hdmi_cal.acdb \
+    $(LOCAL_PATH)/audio/acdbdata/Headset_cal.acdb:system/etc/acdbdata/Headset_cal.acdb \
+    $(LOCAL_PATH)/audio/acdbdata/Speaker_cal.acdb:system/etc/acdbdata/Speaker_cal.acdb \
+    $(LOCAL_PATH)/audio/audio_effects.conf:system/etc/audio_effects.conf \
+    $(LOCAL_PATH)/audio/listen_platform_info.xml:system/etc/listen_platform_info.xml \
+    $(LOCAL_PATH)/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
+    $(LOCAL_PATH)/audio/audio_platform_info_i2s.xml:system/etc/audio_platform_info_i2s.xml \
+    $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
+    $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/audio/media_profiles.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/audio/media_codecs.xml:system/etc/media_codecs.xml
+
+# CMActions
+PRODUCT_PACKAGES += \
+    CMActions
+
+# Wifi Firmware
+PRODUCT_COPY_FILES += \
+    kernel/moto/clark/drivers/staging/qcacld-2.0/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/qca_cld/WCNSS_cfg.dat \
+    kernel/moto/clark/drivers/staging/qcacld-2.0/firmware_bin/WCNSS_qcom_cfg.usb.ini:system/etc/firmware/wlan/qca_cld/WCNSS_qcom_cfg.usb.ini \
+    kernel/moto/clark/drivers/staging/qcacld-2.0/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
+
+PRODUCT_PACKAGES += \
+    dhcpcd.conf \
+    hostapd_default.conf \
+    hostapd.deny \
+    hostapd.accept \
+    hostapd \
+    libwpa_client \
+    wpa_supplicant \
+    wpa_supplicant.conf \
+    wpa_supplicant_overlay.conf \
+    p2p_supplicant_overlay.conf \
+
+PRODUCT_PACKAGES += \
+    gps.msm8992
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/configs/gps/izat.conf:system/etc/izat.conf
+
+PRODUCT_COPY_FILES += \
+    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
+    $(LOCAL_PATH)/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
+    $(LOCAL_PATH)/nfc/libnfc-brcm-20795a20.conf:system/etc/libnfc-brcm-20795a20.conf
+
+# These are the hardware-specific features
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+    frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
+    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
+    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
+    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
+    frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
+    frameworks/native/data/etc/android.hardware.sensor.barometer.xml:system/etc/permissions/android.hardware.sensor.barometer.xml \
+    frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:system/etc/permissions/android.hardware.sensor.stepcounter.xml \
+    frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:system/etc/permissions/android.hardware.sensor.stepdetector.xml \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
+    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
+    frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
+    frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
+    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
+    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml
 
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
-$(call inherit-product-if-exists, hardware/qcom/msm8x84/msm8x84.mk)
-$(call inherit-product-if-exists, vendor/qcom/gpu/msm8x84/msm8x84-gpu-vendor.mk)
+$(call inherit-product-if-exists, hardware/qcom/msm8x94/msm8x84.mk)
+$(call inherit-product-if-exists, vendor/qcom/gpu/msm8x94/msm8x84-gpu-vendor.mk)
+
