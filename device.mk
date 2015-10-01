@@ -256,20 +256,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.mdpcomp.enable=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.audio.calfile0=/etc/acdbdata/Bluetooth_cal.acdb \
-    persist.audio.calfile1=/etc/acdbdata/General_cal.acdb \
-    persist.audio.calfile2=/etc/acdbdata/Global_cal.acdb \
-    persist.audio.calfile3=/etc/acdbdata/Handset_cal.acdb \
-    persist.audio.calfile4=/etc/acdbdata/Hdmi_cal.acdb \
-    persist.audio.calfile5=/etc/acdbdata/Headset_cal.acdb \
-    persist.audio.calfile6=/etc/acdbdata/Speaker_cal.acdb \
-    persist.audio.dualmic.config=endfire \
-    persist.audio.fluence.voicecall=true \
-    persist.audio.fluence.voicecomm=true \
-    persist.audio.fluence.voicecall=true \
-    persist.audio.fluence.speaker=true
-
-PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
     rild.libargs=-d /dev/smd0 \
     ril.subscription.types=NV,RUIM \
