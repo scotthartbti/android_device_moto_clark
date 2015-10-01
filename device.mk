@@ -98,6 +98,12 @@ PRODUCT_PACKAGES += \
     mm-jpeg-interface-test \
     mm-qcamera-app
 
+# ANT+
+PRODUCT_PACKAGES += \
+    AntHalService \
+    com.dsi.ant.antradio_library \
+    libantradio
+
 # for off charging mode
 PRODUCT_PACKAGES += \
     charger_res_images
@@ -138,14 +144,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     init.class_main.sh \
     init.mmi.boot.sh \
-    init.mmi.dtv.sh \
     init.mmi.early_boot.sh \
     init.mmi.touch.sh \
     init.mmi.usb.rc \
     init.mmi.usb.sh \
     init.qcom.rc \
     init.mmi.block_perm.sh \
-    init.mmi.diag_mdlog.rc \
     init.qcom.class_core.sh \
     init.qcom.sh \
     ueventd.qcom.rc
