@@ -46,9 +46,6 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 an
 
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset BOARD_RAMDISK_OFFSET --tags_offset BOARD_KERNEL_TAGS_OFFSET --dt device/moto/clark/dt.img
 
-# QCOM sepolicy
-include device/qcom/sepolicy/sepolicy.mk
-
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
 BOARD_USES_QCOM_HARDWARE := true
@@ -144,6 +141,27 @@ TARGET_PROVIDES_LIBLIGHT := true
 # Power
 TARGET_POWERHAL_VARIANT := qcom
 
+# SELinux
+include device/qcom/sepolicy/sepolicy.mk
+
+BOARD_SEPOLICY_DIRS += \
+    $(DEVICE_PATH)/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+    atfwd.te \
+    batt_health.te \
+    bluetooth.te \
+    file_contexts \
+    healthd.te \
+    init.te \
+    init_shell.te \
+    mm-qcamerad.te \
+    qmuxd.te \
+    rild.te \
+    rmt_storage.te \
+    sysinit.te \
+    system_server.te \
+    vold.te
 
 BOARD_SUPPRESS_SECURE_ERASE := true
 
