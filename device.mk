@@ -246,7 +246,12 @@ PRODUCT_PACKAGES += \
     p2p_supplicant_overlay.conf \
 
 PRODUCT_PACKAGES += \
-    gps.msm8992
+    gps.msm8992 \
+    flp.conf \
+    gps.conf \
+    izat.conf \
+    quipc.conf \
+    sap.conf
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/gps.conf:system/etc/gps.conf \
