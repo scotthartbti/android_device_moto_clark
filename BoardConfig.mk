@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+DEVICE_PATH := device/moto/clark
+
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_SMP := true
 TARGET_ARCH := arm64
@@ -44,7 +46,7 @@ TARGET_USES_UNCOMPRESSED_KERNEL := true
 
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 earlyprintk=msm_hsl_uart,0xf991e000 utags.blkdev=/dev/block/bootdevice/by-name/utags utags.backup=/dev/block/bootdevice/by-name/utagsBackup
 
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset BOARD_RAMDISK_OFFSET --tags_offset BOARD_KERNEL_TAGS_OFFSET --dt device/moto/clark/dt.img
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset BOARD_RAMDISK_OFFSET --tags_offset BOARD_KERNEL_TAGS_OFFSET --dt $(DEVICE_PATH)/dt.img
 
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
@@ -88,14 +90,14 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BOARD_HAS_QCA_BT_ROME := true
 QCOM_BT_USE_BTNV := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/moto/clark/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 
 TARGET_NO_RADIOIMAGE := true
 TARGET_BOARD_PLATFORM := msm8992
 TARGET_BOOTLOADER_BOARD_NAME := clark
 
 # GPS
-TARGET_GPS_HAL_PATH := device/moto/clark/gps
+TARGET_GPS_HAL_PATH := $(DEVICE_PATH)/gps
 TARGET_NO_RPC := true
 
 # Graphics
@@ -169,16 +171,16 @@ BOARD_SEPOLICY_UNION += \
 BOARD_SUPPRESS_SECURE_ERASE := true
 
 # CMHW
-BOARD_HARDWARE_CLASS := device/moto/clark/cmhw/
+BOARD_HARDWARE_CLASS := $(DEVICE_PATH)/cmhw/
 
 # TWRP definitions
 DEVICE_RESOLUTION := 1440x2560
-TW_BOARD_CUSTOM_GRAPHICS := ../../../device/moto/clark/recovery/graphics.c
+TW_BOARD_CUSTOM_GRAPHICS := ../../../$(DEVICE_PATH)/clark/recovery/graphics.c
 TW_INCLUDE_L_CRYPTO := true
 TW_TARGET_USES_QCOM_BSP := true
 TW_NEW_ION_HEAP := true
 TW_INCLUDE_CRYPTO := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
-TARGET_RECOVERY_FSTAB = device/moto/clark/fstab.qcom
+TARGET_RECOVERY_FSTAB = $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 

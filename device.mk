@@ -146,11 +146,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ## Below here are confirmed important things 
 ## Do not edit
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.qcom:root/fstab.qcom \
     $(LOCAL_PATH)/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
 
 PRODUCT_PACKAGES += \
     init.class_main.sh \
+    fstab.qcom \
     init.mmi.boot.sh \
     init.mmi.early_boot.sh \
     init.mmi.touch.sh \
