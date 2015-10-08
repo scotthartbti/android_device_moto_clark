@@ -166,7 +166,8 @@ BOARD_SEPOLICY_UNION += \
     rmt_storage.te \
     sysinit.te \
     system_server.te \
-    vold.te
+    vold.te \
+    ueventd.te
 
 BOARD_SUPPRESS_SECURE_ERASE := true
 
