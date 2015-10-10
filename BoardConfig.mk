@@ -166,8 +166,6 @@ BOARD_SEPOLICY_UNION += \
     vold.te \
     ueventd.te
 
-BOARD_SUPPRESS_SECURE_ERASE := true
-
 # CMHW
 BOARD_HARDWARE_CLASS := $(DEVICE_PATH)/cmhw/
 
