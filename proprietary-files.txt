@@ -94,7 +94,6 @@ lib/hw/camera.msm8992.so
 lib/libadvalgcore.so
 lib/libAisAdapter.so
 lib/libAlAisLib.so
-lib/libbson.so
 lib/libcamerabgproc-jni.so
 lib/libcamerabgprocservice.so
 lib/libjscore.so
@@ -280,7 +279,6 @@ vendor/lib/libtzdrmgenprov.so
 vendor/lib/libwvdrm_L1.so
 vendor/lib/libwvm.so
 vendor/lib/libWVStreamControlAPI_L1.so
-vendor/lib/mediadrm/libdrmclearkeyplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
 
 # Display tuning
@@ -371,10 +369,6 @@ vendor/lib64/libloc_ext.so
 vendor/lib64/liblocationservice.so
 vendor/lib64/libquipc_os_api.so
 vendor/lib64/libulp2.so
-lib/libloc_eng.so
-lib64/libloc_eng.so
-vendor/lib/libizat_core.so
-vendor/lib64/libizat_core.so
 
 # Adreno GPU
 etc/firmware/a225p5_pm4.fw
@@ -494,8 +488,6 @@ vendor/lib64/libqcci_legacy.so
 vendor/lib64/libdiag.so
 
 # CNE / DPM
-lib64/libcnefeatureconfig.so
-lib/libcnefeatureconfig.so
 vendor/lib64/libcneapiclient.so
 vendor/lib64/libcneconn.so
 vendor/lib64/libcneqmiutils.so
@@ -524,13 +516,11 @@ bin/netmgrd
 bin/qmi_motext_hook
 bin/qmuxd
 bin/radish
-bin/rild
 bin/rfs_access
 bin/rmt_storage
 lib/libmdmcutback.so
 lib/libmotext_inf.so
 lib/libqmimotext.so
-lib/libril.so
 lib64/libadropbox.so
 lib64/libqmimotext.so
 vendor/lib/libconfigdb.so
@@ -600,7 +590,6 @@ vendor/lib/libactuator_mot_lc898212xd.so
 lib/libmbs.so
 lib/libmot_lux_standardization.so
 lib64/libcamerabgproc-jni.so
-lib64/libbson.so
 vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
 vendor/lib/rfsa/adsp/libpanorama_skel.so
 vendor/lib/rfsa/adsp/libscveTextReco_skel.so
