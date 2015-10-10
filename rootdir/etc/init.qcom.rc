@@ -350,8 +350,23 @@ on post-fs-data
     mkdir /data/audio/acdbdata 0770 media audio
     mkdir /data/audio/acdbdata/delta 0770 media audio
 
+    # Vibrator
     chown system system /sys/vibrator/pwmvalue
     chmod 0644 /sys/vibrator/pwmvalue
+
+    # Display color calibration
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_enable
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_cont
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_hue
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_invert
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_min
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_sat
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_val
+
+    # Sunlight Enhancement mode
+    chown system system /sys/devices/virtual/graphics/fb0/hbm
+    chmod 0660 /sys/devices/virtual/graphics/fb0/hbm
 
     setprop vold.post_fs_data_done 1
 
