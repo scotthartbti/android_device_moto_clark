@@ -192,7 +192,7 @@ PRODUCT_BOOT_JARS += qcmediaplayer
 
 # Lights
 PRODUCT_PACKAGES += \
-    lights.clark
+    lights.msm8992
 
 # Audio
 PRODUCT_PACKAGES += \
