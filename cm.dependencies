@@ -1,0 +1,27 @@
+[
+  {
+    "repository": "scotthartbti/android_device_moto_clark",
+    "target_path": "device/moto/clark",
+    "branch":      "cm-12.1"
+  },
+  {
+    "repository": "CyanogenMod/android_device_qcom_common",
+    "target_path": "device/qcom/common",
+    "branch":      "cm-12.1"
+  },
+  {
+    "repository": "CyanogenMod/android_external_mm-dash",
+    "target_path": "external/mm-dash",
+    "branch":      "cm-12.1"
+  },
+  {
+    "repository": "scotthartbti/android_kernel_motorola_msm8992",
+    "target_path": "kernel/moto/clark",
+    "branch":      "cm-12.1"
+  },
+  {
+    "repository": "scotthartbti/android_vendor_motorola_clark",
+    "target_path": "vendor/motorola/clark",
+    "branch":      "cm-12.1"
+  }
+]
