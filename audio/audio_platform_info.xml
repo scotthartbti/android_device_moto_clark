@@ -41,4 +41,8 @@
 	<device name="SND_DEVICE_OUT_HEADPHONES" acdb_id="5"/>
     </acdb_ids>
 
+    <backend_names>
+        <device name="SND_DEVICE_OUT_SPEAKER_PROTECTED" backend="speaker-safe" />
+    </backend_names>
+
 </audio_platform_info>
