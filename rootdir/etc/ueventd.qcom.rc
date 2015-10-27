@@ -217,6 +217,17 @@
 /sys/devices/virtual/optical_sensors/lightsensor    ls_poll_delay  0660    input    system
 /sys/devices/virtual/input/input*                   poll           0660    input    system
 /sys/devices/virtual/input/input*                   pollrate_ms    0660    input    system
+/sys/devices/virtual/input/input*                   delay          0660    root     input
+/sys/devices/virtual/input/input*                   op_mode        0660    root     input
+/sys/devices/virtual/input/input*                   offset_x       0664    root     input
+/sys/devices/virtual/input/input*                   offset_y       0664    root     input
+/sys/devices/virtual/input/input*                   offset_z       0664    root     input
+/sys/devices/virtual/input/input*                   rept_xy        0664    root     input
+/sys/devices/virtual/input/input*                   rept_z         0664    root     input
+/sys/devices/virtual/input/input*                   bandwidth      0664    root     input
+/sys/devices/virtual/input/input*                   range          0664    root     input
+/sys/devices/virtual/input/input*                   driver/enable  0660    root     input
+/sys/devices/virtual/input/input*                   driver/delay   0660    root     input
 
 # vm_bms
 /dev/vm_bms               0660   system     system
@@ -237,6 +248,18 @@
 
 # SSR devices
 /dev/subsys_*         0640   system     system
+
+# SSR
+/dev/coredump_modem       0660   radio      radio
+/dev/ramdump_adsp         0660   radio      radio
+/dev/ramdump_modem        0660   radio      radio
+/dev/ramdump_smem-modem   0660   radio      radio
+/dev/ramdump_smem-smd     0660   radio      radio
+/dev/ramdump_venus        0660   radio      radio
+/dev/ramdump_pronto       0660   radio      radio
+
+# ACDB
+/dev/msm_acdb             0660   system     audio
 
 # Moto Sensorhub Sensors
 /dev/motosh               0660   system     compass

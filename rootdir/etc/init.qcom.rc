@@ -243,6 +243,7 @@ on post-fs-data
 
     # Create directory for cutback
     mkdir /data/misc/cutback 0770 radio wifi
+    mkdir /data/misc/audio_cutback 0770 radio audio
 
     # Setup folder for WLAN WAPI
     mkdir /data/wapi_certificate 0750 system wifi
